@@ -1,0 +1,7 @@
+.idea
+/.vscode
+/vendor
+phpunit.xml
+test/server/node_modules
+.phpunit.result.cache
+

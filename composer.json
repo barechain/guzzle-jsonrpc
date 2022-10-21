@@ -1,0 +1,48 @@
+{
+    "name": "barechain/guzzle-jsonrpc",
+    "description": "JSON-RPC 2.0 client for Guzzle",
+    "keywords": ["guzzle", "guzzlehttp", "http", "json", "json-rpc", "jsonrpc", "ring", "rpc"],
+    "homepage": "https://github.com/barechain/guzzle-jsonrpc",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "inez4",
+            "email": "rremfi32@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": ["src/functions_include.php"],
+        "psr-4": {
+            "Barechain\\GuzzleHttp\\JsonRpc\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Barechain\\GuzzleHttp\\JsonRpc\\Test\\": "test/src"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/promises": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "adlawson/timezone": "~1.0",
+        "squizlabs/php_codesniffer": "^2.9",
+        "mockery/mockery": "^1.4.2",
+        "phpunit/phpunit": "^9.5.25"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "ext-simplexml": "1.0",
+            "ext-dom": "1.0",
+            "ext-tokenizer": "1.0",
+            "ext-xmlwriter": "1.0"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

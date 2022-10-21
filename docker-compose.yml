@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  guzzle-jsonrpc-app:
+    image: guzzle-jsonrpc-app
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+      args:
+        - USER_ID
+        - GROUP_ID
+    container_name: guzzle-jsonrpc-app
+    restart: unless-stopped
+    volumes:
+      - ./:/srv/app
+
+  node:
+    image: node:8
+    expose:
+      - 80
+    volumes:
+      - ./test/server:/srv:delegated
+      - ~/.npm:/root/.npm:delegated
+    working_dir: /srv
+    command: node -- index.js
+
+
